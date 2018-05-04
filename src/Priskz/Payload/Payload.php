@@ -1,4 +1,6 @@
-<?php namespace Priskz\Payload;
+<?php
+
+namespace Priskz\Payload;
 
 class Payload implements PayloadInterface
 {
