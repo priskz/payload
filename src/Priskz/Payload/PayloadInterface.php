@@ -22,4 +22,11 @@ interface PayloadInterface
 	 *	Get Status
 	 */
 	public function getStatus();
+
+	/**
+	 * Check if Payload status is a specific status.
+	 *
+	 * @return boolean
+	 */
+	public function isStatus(string $status);
 }

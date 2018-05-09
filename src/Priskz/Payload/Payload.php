@@ -44,6 +44,16 @@ class Payload implements PayloadInterface
 	}
 
 	/**
+	 * Check if Payload status is a specific status.
+	 *
+	 * @return boolean
+	 */
+	public function isStatus(string $status)
+	{
+		return ($this->status == $status);
+	}
+
+	/**
 	 * To String Helper
 	 *
 	 * @return string
