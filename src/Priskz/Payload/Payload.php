@@ -7,12 +7,12 @@ class Payload implements PayloadInterface
 	/**
 	 *  @var mixed
 	 */
-	protected $data;
+	public $data;
 
 	/**
 	 *  @var string
 	 */
-	protected $status;
+	public $status;
 
 	/**
 	 *	Constructor
