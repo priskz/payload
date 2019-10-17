@@ -46,6 +46,7 @@ class Payload implements PayloadInterface
 	/**
 	 * Check if Payload status is a specific status.
 	 *
+	 * @param  status $status
 	 * @return boolean
 	 */
 	public function isStatus(string $status)
@@ -62,4 +63,16 @@ class Payload implements PayloadInterface
 	{
 		return json_encode(['data' => $this->data, 'status' => $this->status]);
 	}
+
+	/**
+	 * Helper to return data subset by given key.
+	 *
+	 * @param  status $key
+	 * @return mixed
+	 */
+	public function get(string $key)
+	{
+		return $this->data[$key];
+	}
+
 }
