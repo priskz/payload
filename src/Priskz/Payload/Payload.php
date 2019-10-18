@@ -55,6 +55,31 @@ class Payload implements PayloadInterface
 	}
 
 	/**
+	 * Helper to return data subset by given key.
+	 * Use dot notation to find nested values.
+	 *
+	 * @param  status $key
+	 * @return mixed
+	 */
+	public function get(string $key)
+	{
+		// Convert into an array.
+		$keys = explode('.', $key);
+
+		// Init.
+		$value = null;
+
+		// Retrieve the value.
+		foreach($keys as $key)
+		{
+			$value = $this->data[$key];
+		}
+
+		// Return result.
+		return $value;
+	}
+
+	/**
 	 * To String Helper
 	 *
 	 * @return string
@@ -63,16 +88,4 @@ class Payload implements PayloadInterface
 	{
 		return json_encode(['data' => $this->data, 'status' => $this->status]);
 	}
-
-	/**
-	 * Helper to return data subset by given key.
-	 *
-	 * @param  status $key
-	 * @return mixed
-	 */
-	public function get(string $key)
-	{
-		return $this->data[$key];
-	}
-
 }
