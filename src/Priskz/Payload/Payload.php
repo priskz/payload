@@ -63,16 +63,16 @@ class Payload implements PayloadInterface
 	 */
 	public function get(string $key)
 	{
+		// Init.
+		$value = $this->data;
+
 		// Convert into an array.
 		$keys = explode('.', $key);
-
-		// Init.
-		$value = null;
 
 		// Retrieve the value.
 		foreach($keys as $key)
 		{
-			$value = $this->data[$key];
+			$value = $value[$key];
 		}
 
 		// Return result.
